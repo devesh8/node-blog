@@ -49,6 +49,21 @@ $ git push (branch name)
 
 ````
 
+## Install Express JS
+
+````
+
+$ npm install express-generator -g
+\\install express
+
+$ npm express . -e
+
+$ npm install
+
+$ npm start
+
+````
+
 ## Reference
 
  - Oject Oriented JavaScript by Stoyan Stefanove and Kumar Chetan Sharma
