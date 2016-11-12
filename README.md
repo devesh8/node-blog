@@ -58,6 +58,10 @@ $ npm install express-generator -g
 
 $ npm express . -e
 
+$ npm install
+
+$ npm start
+
 ````
 
 ## Reference
