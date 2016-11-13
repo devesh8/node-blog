@@ -1,0 +1,30 @@
+## Table
+
+User:{
+	name:"",
+	email:""
+}
+Posts:{
+	heading:"",
+	body:"",
+	image:"",
+	author:"",
+	date:"",
+	time:"",
+	Comments:{
+		user:"",
+		message:"",
+		profilepic:"",
+		date:"",
+		time:""
+	}
+}
+Categories:{
+	category:"",
+	subcategory:""
+}
+Static:{
+	headging:"",
+	body:"",
+	image:""
+}
