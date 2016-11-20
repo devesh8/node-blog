@@ -64,6 +64,10 @@ $ npm start
 
 ````
 
+## Passing Data from Client -> Server
+// /catId/1 params
+//req.query ?catId=1
+//req.body {catid:1}
 ## Reference
 
  - Oject Oriented JavaScript by Stoyan Stefanove and Kumar Chetan Sharma

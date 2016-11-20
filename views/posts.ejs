@@ -69,19 +69,18 @@
             <div class="col-lg-8">
 
                 <!-- Blog Post -->
-				<% for(var i=0; i<posts.length; i++) {%>
                 <!-- Title -->
-                <h1><%= posts[i].heading %></h1>
+                <h1><%= post.heading %></h1>
 
                 <!-- Author -->
                 <p class="lead">
-                    by <a href="#"><%= posts[i].author %></a> in <%= posts[i].category %>
+                    by <a href="#"><%= post.author %></a> in <%= post.category %>
                 </p>
 
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= posts[i].date %> at <%= posts[i].time %></p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= post.date %> at <%= post.time %></p>
 
                 <hr>
 
@@ -91,16 +90,37 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-                <a href="/post/<%= posts[i].post_id %>">Continue Reading</a>
+               <%= post.body %>
+
                 <hr>
 
-				<% } %>
+				 <!-- Blog Comments -->
 
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <hr>
+                <% for(var i=0; i<post.comments.length; i++) {%>
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="/images/placeholder-64x64.png" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><%= post.comments[i].heading %>
+                            <small><%= post.comments[i].date %> at <%= post.comments[i].time %></small>
+                        </h4>
+                      <%= post.comments[i].body %>
+                    </div>
+                </div>
+                <% } %>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -124,30 +144,13 @@
                 <div class="well">
                     <h4>Blog Categories</h4>
                     <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
+                       <ul>
+                       <% for(var i=0; i<cats.length; i++) {%>
+                       	<li>
+                       		<a href="/category/<%= cats[i].category %>"><%= cats[i].category %></a>
+                       	</li>
+                       	<% } %>
+                       </ul>
                     </div>
                     <!-- /.row -->
                 </div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+ <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <h1>Manage Post</h1>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Edit</th>
+                    <th>Post</th>
+                    <th>Category</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0; i<posts.length; i++) {%>
+                  <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="<%= posts[i].post_id %>"></label>                            
+                        </div>
+                    </td>
+                    <td><button type="submit" class="btn btn-warning" > <span class="glyphicon glyphicon-pencil"></span></button></td>
+                    <td><%= posts[i].heading %></td>
+                    <td><%= posts[i].category %></td>
+                    <td><%= posts[i].date %> <%= posts[i].time %></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <button type="submit" class="btn btn-warning" >Delete Post <span class="glyphicon glyphicon-trash"></span></button>
+        </div>
+    </div>
+</body>

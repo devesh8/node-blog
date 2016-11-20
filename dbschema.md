@@ -24,7 +24,7 @@ Categories:{
 	subcategory:""
 }
 Static:{
-	headging:"",
+	heading:"",
 	body:"",
 	image:""
 }
