@@ -10,6 +10,8 @@ var url = 'mongodb://localhost:27017/node-blog';
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var api = require('./routes/api');
+//var admin = require('./routes/admin');
 
 var app = express();
 
@@ -35,7 +37,8 @@ app.use(function(req, res, next) {
 
 app.use('/', index);
 app.use('/users', users);
-
+app.use('/api', api);
+//app.use('/admin',admin);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

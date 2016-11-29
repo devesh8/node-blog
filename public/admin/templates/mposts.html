@@ -1,0 +1,30 @@
+<div class="row">
+    <h1>{{title}}</h1>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Edit</th>
+            <th>Post</th>
+            <th>Category</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% for(var i=0; i<posts.length; i++) {%>
+          <tr>
+            <td>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="<%= posts[i].post_id %>"></label>                            
+                </div>
+            </td>
+            <td><button type="submit" class="btn btn-warning" > <span class="glyphicon glyphicon-pencil"></span></button></td>
+            <td><%= posts[i].heading %></td>
+            <td><%= posts[i].category %></td>
+            <td><%= posts[i].date %> <%= posts[i].time %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-warning" >Delete Post <span class="glyphicon glyphicon-trash"></span></button>
+</div>

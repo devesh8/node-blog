@@ -1,0 +1,25 @@
+{
+  "name": "node-blog",
+  "description": "Bower Project",
+  "main": "",
+  "authors": [
+    "devesh8 <devesh8@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/devesh8/node-blog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "v4.0.0-alpha.5",
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "glyphicons": "^0.0.2"
+  }
+}

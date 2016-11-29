@@ -4,6 +4,7 @@ var ModelPost = require('../model/post')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	console.log("index");
 	req.db.collection('post').find().toArray(function(error, doc){
 		req.db.collection('categories').find().toArray(function(error, cat){
 			res.render('index', {posts:doc, categories:cat});
@@ -14,12 +15,16 @@ router.get('/', function(req, res, next) {
 router.get('/managepost', function(req, res, next) {
 	req.db.collection('post').find().toArray(function(error, doc){
 		req.db.collection('categories').find().toArray(function(error, cat){
-			res.json({posts:doc, categories:cat});
+			res.render('managepost', {posts:doc, categories:cat});
 		});
 	});
 });
 
-router.get('/post/:id', ModelPost.fetchPost, ModelPost.fetchComment, ModelPost.renderPost );
+router.get('/Admin', function(req, res, next) {
+	res.render('admin');
+});
+
+router.get('/post/:id', ModelPost.fetchPost, ModelPost.fetchComment, ModelPost.renderPost);
 router.get('/category/:id', ModelPost.fetchPostbyCategory, ModelPost.renderCategory );
 
 router.get('/addposts', function(req, res, next) {
