@@ -10,7 +10,6 @@ var postModel = {
 			//req.post = doc[0];
 		});
 	},
-	
 	fetchComment : function(req,res, next) {
 		req.db.collection('categories').find().toArray(function(error, cat){
 			req.cats = cat;
@@ -27,8 +26,15 @@ var postModel = {
 				next();
 		});
 	},
+	fetchCategory : function(req, res, next) {
+		req.db.collection('categories').find().toArray(function(error, cat){
+			req.categories = cat;
+			next();
+		});
+	},
 	renderCategory : function(req, res, next) {
-		res.render('index', {posts:req.posts});
+		console.log(res.categories);
+		res.render('index', {posts:req.posts, categories:req.categories});
 	}
 };
 module.exports = postModel;
