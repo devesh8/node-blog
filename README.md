@@ -68,6 +68,22 @@ $ npm start
 // /catId/1 params
 //req.query ?catId=1
 //req.body {catid:1}
+
+##APIS
+- POST
+- GET  /post            //List all post
+- GET  /post/id         //Post by id 
+- POST /post            //Add new post
+- POST /post/id         //Update Post
+- POST /post/id/delete  //Delete Post
+
+- Category
+- GET  /category            //List all Category
+- GET  /category/id         //Category by id 
+- POST /category            //Add new Category
+- POST /category/id         //Update Category
+
+
 ## Reference
 
  - Oject Oriented JavaScript by Stoyan Stefanove and Kumar Chetan Sharma
